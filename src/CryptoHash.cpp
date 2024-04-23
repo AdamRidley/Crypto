@@ -20,7 +20,7 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
-#include "Hash.h"
+#include "CryptoHash.h"
 #include <string.h>
 
 /**
@@ -33,7 +33,7 @@
 /**
  * \brief Constructs a new hash object.
  */
-Hash::Hash()
+CryptoHash::CryptoHash()
 {
 }
 
@@ -45,7 +45,7 @@ Hash::Hash()
  *
  * \sa clear()
  */
-Hash::~Hash()
+CryptoHash::~CryptoHash()
 {
 }
 
@@ -159,7 +159,7 @@ Hash::~Hash()
  * finalizeHMAC() by directly formatting the HMAC key into the subclass's
  * internal block buffer and resetting the hash.
  */
-void Hash::formatHMACKey(void *block, const void *key, size_t len, uint8_t pad)
+void CryptoHash::formatHMACKey(void *block, const void *key, size_t len, uint8_t pad)
 {
     size_t size = blockSize();
     reset();

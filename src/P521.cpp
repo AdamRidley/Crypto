@@ -274,7 +274,7 @@ bool P521::dh2(const uint8_t k[132], uint8_t f[66])
  * \sa verify(), generatePrivateKey()
  */
 void P521::sign(uint8_t signature[132], const uint8_t privateKey[66],
-                const void *message, size_t len, Hash *hash)
+                const void *message, size_t len, CryptoHash *hash)
 {
     uint8_t hm[66];
     uint8_t k[66];
@@ -372,7 +372,7 @@ void P521::sign(uint8_t signature[132], const uint8_t privateKey[66],
  */
 bool P521::verify(const uint8_t signature[132],
                   const uint8_t publicKey[132],
-                  const void *message, size_t len, Hash *hash)
+                  const void *message, size_t len, CryptoHash *hash)
 {
     limb_t x[NUM_LIMBS_521BIT];
     limb_t y[NUM_LIMBS_521BIT];
@@ -1513,7 +1513,7 @@ void P521::recipQ(limb_t *result, const limb_t *x)
  * previous one is rejected.
  */
 void P521::generateK(uint8_t k[66], const uint8_t hm[66],
-                     const uint8_t x[66], Hash *hash, uint64_t count)
+                     const uint8_t x[66], CryptoHash *hash, uint64_t count)
 {
     size_t hlen = hash->hashSize();
     uint8_t V[64];

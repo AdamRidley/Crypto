@@ -26,11 +26,11 @@
 #include <inttypes.h>
 #include <stddef.h>
 
-class Hash
+class CryptoHash
 {
 public:
-    Hash();
-    virtual ~Hash();
+    CryptoHash();
+    virtual ~CryptoHash();
 
     virtual size_t hashSize() const = 0;
     virtual size_t blockSize() const = 0;

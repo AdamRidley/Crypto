@@ -24,9 +24,9 @@
 #define CRYPTO_SHA3_h
 
 #include "KeccakCore.h"
-#include "Hash.h"
+#include "CryptoHash.h"
 
-class SHA3_256 : public Hash
+class SHA3_256 : public CryptoHash
 {
 public:
     SHA3_256();
@@ -51,7 +51,7 @@ private:
     KeccakCore core;
 };
 
-class SHA3_512 : public Hash
+class SHA3_512 : public CryptoHash
 {
 public:
     SHA3_512();

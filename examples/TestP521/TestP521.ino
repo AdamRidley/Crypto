@@ -408,7 +408,7 @@ static TestSignVector const testVectorP521_4 PROGMEM = {
      0xDC, 0xE3}
 };
 
-void testSignCommon(const struct TestSignVector *_test, Hash *hash)
+void testSignCommon(const struct TestSignVector *_test, CryptoHash *hash)
 {
     uint8_t *privateKey = alice_f;
     uint8_t *publicKey = alice_k;

@@ -25,7 +25,7 @@
 
 #include "BigNumberUtil.h"
 
-class Hash;
+class CryptoHash;
 
 class P521
 {
@@ -37,10 +37,10 @@ public:
     static bool dh2(const uint8_t k[132], uint8_t f[66]);
 
     static void sign(uint8_t signature[132], const uint8_t privateKey[66],
-                     const void *message, size_t len, Hash *hash = 0);
+                     const void *message, size_t len, CryptoHash *hash = 0);
     static bool verify(const uint8_t signature[132],
                        const uint8_t publicKey[132],
-                       const void *message, size_t len, Hash *hash = 0);
+                       const void *message, size_t len, CryptoHash *hash = 0);
 
     static void generatePrivateKey(uint8_t privateKey[66]);
     static void derivePublicKey(uint8_t publicKey[132], const uint8_t privateKey[66]);
@@ -100,7 +100,7 @@ private:
     static void recipQ(limb_t *result, const limb_t *x);
 
     static void generateK(uint8_t k[66], const uint8_t hm[66],
-                          const uint8_t x[66], Hash *hash, uint64_t count);
+                          const uint8_t x[66], CryptoHash *hash, uint64_t count);
     static void generateK(uint8_t k[66], const uint8_t hm[66],
                           const uint8_t x[66], uint64_t count);
 

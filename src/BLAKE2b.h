@@ -23,9 +23,9 @@
 #ifndef CRYPTO_BLAKE2B_H
 #define CRYPTO_BLAKE2B_H
 
-#include "Hash.h"
+#include "CryptoHash.h"
 
-class BLAKE2b : public Hash
+class BLAKE2b : public CryptoHash
 {
 public:
     BLAKE2b();

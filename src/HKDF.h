@@ -23,7 +23,7 @@
 #ifndef CRYPTO_HKDF_h
 #define CRYPTO_HKDF_h
 
-#include "Hash.h"
+#include "CryptoHash.h"
 #include "Crypto.h"
 
 class HKDFCommon
@@ -39,14 +39,14 @@ public:
 
 protected:
     HKDFCommon();
-    void setHashAlgorithm(Hash *hashAlg, uint8_t *buffer)
+    void setHashAlgorithm(CryptoHash *hashAlg, uint8_t *buffer)
     {
         hash = hashAlg;
         buf = buffer;
     }
 
 private:
-    Hash *hash;
+    CryptoHash *hash;
     uint8_t *buf;
     uint8_t counter;
     uint8_t posn;
